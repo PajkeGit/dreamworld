@@ -1,16 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
-import Replicate from "replicate";
 
 export const runtime = "nodejs"; // add this line
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN,
-});
 
 interface StylePrompts {
   [key: string]: string;
@@ -49,6 +39,17 @@ interface ReplicateInput {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
+  const OpenAI = (await import("openai")).default;
+  const Replicate = (await import("replicate")).default;
+
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+
+  const replicate = new Replicate({
+    auth: process.env.REPLICATE_API_TOKEN,
+  });
+
   try {
     const {
       prompt,
