@@ -75,6 +75,31 @@ const surprisePrompts: string[] = [
   "A penguin explorer discovering an ancient ice cave",
   "Penguins building a high-tech igloo laboratory",
   "A penguin superhero saving the Antarctic",
+  "Penguins hosting a formal tea party on an iceberg",
+  "A penguin DJ spinning records at an underwater disco",
+  "Penguins participating in the Winter Olympics",
+  "A penguin chef running a sushi restaurant for fish",
+  "Penguins forming a barbershop quartet on a snowy stage",
+  "A penguin astronaut planting a flag on Mars",
+  "Penguins operating a submarine in the depths of the ocean",
+  "A penguin detective solving a mystery in a snowy village",
+  "Penguins running a tropical resort for polar bears",
+  "A penguin time traveler meeting dinosaurs",
+  "Penguins organizing a fashion show with fish-scale outfits",
+  "A penguin wizard casting ice spells in a magical duel",
+  "Penguins building a Rube Goldberg machine out of ice and snow",
+  "A penguin band performing a rock concert for seals",
+  "Penguins operating a hot air balloon made of aurora borealis",
+  "A penguin filmmaker directing an underwater movie",
+  "Penguins running a postal service using flying fish",
+  "A penguin mad scientist creating a weather-control machine",
+  "Penguins hosting an intergalactic peace conference",
+  "A penguin pirate captain leading a crew on an icy ship",
+  "Penguins operating a ski resort for polar animals",
+  "A penguin artist painting with colorful fish on an ice canvas",
+  "Penguins running a comedy club with a walrus as the bouncer",
+  "A penguin secret agent on a stealth mission in a tropical jungle",
+  "Penguins building a rollercoaster out of ice and snow",
 ];
 
 interface GeneratedImage {
@@ -104,11 +129,21 @@ const Component: React.FC = () => {
   const [loadingText, setLoadingText] = useState<string>("Dreaming");
 
   const loadingTexts = [
-    "Dreaming",
-    "Imagining",
-    "Conjuring",
-    "Visualizing",
-    "Manifesting",
+    "Gathering stardust",
+    "Mixing colors of imagination",
+    "Whispering to the muses",
+    "Painting with cosmic brushes",
+    "Bringing dreams to life",
+    "Sculpting ideas from ether",
+    "Weaving threads of creativity",
+    "Channeling artistic energy",
+    "Brewing a palette of wonder",
+    "Summoning visual symphonies",
+    "Crafting pixels of inspiration",
+    "Distilling essence of imagination",
+    "Harmonizing hues of fantasy",
+    "Conjuring visual poetry",
+    "Awakening dormant creativity",
   ];
 
   useEffect(() => {
@@ -118,7 +153,7 @@ const Component: React.FC = () => {
       interval = setInterval(() => {
         setLoadingText(loadingTexts[index]);
         index = (index + 1) % loadingTexts.length;
-      }, 1000);
+      }, 3000);
     }
     return () => clearInterval(interval);
   }, [isLoading]);
